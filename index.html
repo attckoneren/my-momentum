@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>my momentum</title>
+  </head>
+  <body>
+    <div class="top">
+      <form class="search-form">
+        <button class="search-btn" type="submit" name="click" value="">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          value=""
+          autocapitalize="off"
+        />
+        <div class="search-border"></div>
+        <select class="select-search">
+          <option class="google" value="google">Google</option>
+          <option class="naver" value="naver">Naver</option>
+        </select>
+      </form>
+
+      <div class="weather">
+        <div></div>
+        <div class="weather-icon"></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="main">
+      <h2 class="clock">00:00</h2>
+      <form class="login-form">
+        <input
+          required
+          maxlength="12"
+          type="text"
+          placeholder="What is your name?"
+        />
+      </form>
+      <h1 id="appear" class="hidden"></h1>
+    </div>
+
+    <div class="today-focus">
+      <h3 class="hidden">Today</h3>
+      <h1 class="hidden today-focus__title">
+        What is your main focus for today?
+      </h1>
+      <form class="today-focus__form hidden">
+        <input type="text" required />
+      </form>
+      <div class="today-focus__box hidden">
+        <input id="focus-check" type="checkbox" />
+        <label for="focus-check" class="hidden check-label"></label>
+        <h2 class="hidden today-focus__text"></h2>
+        <button id="today-btn" class="hidden">X</button>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="todo-container">
+        <div class="hidden todo-box">
+          <ul class="todo-list"></ul>
+        </div>
+        <form class="todo-form">
+          <span>Todo</span>
+          <input required id="todo" type="text" />
+        </form>
+      </div>
+
+      <div class="quote">
+        <span class="p"></span>
+        <span class="author"></span>
+      </div>
+    </div>
+    <script src="js/apikey.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/checked.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/60a21b9475.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -54,10 +54,9 @@ if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   parsedToDos.forEach(paintTodo);
   toDos = parsedToDos;
-  /// arrow function
 }
 
-function clickLabel(event) {
+function clickLabel() {
   todoBox.classList.toggle(HIDDEN_CLASSNAME);
 }
 todoSpan.addEventListener("click", clickLabel);

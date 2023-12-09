@@ -2,7 +2,8 @@ const loginForm = document.querySelector(".login-form");
 const loginInput = document.querySelector(".login-form input");
 const hiddenTitle = document.querySelector("#appear");
 const topBox = document.querySelector(".top");
-const bottomBox = document.querySelector(".bottom");
+const todoContainer = document.querySelector(".todo-container");
+const quoteBox = document.querySelector(".quote");
 
 const focusContainer = document.querySelector(".today-focus");
 const focusBox = document.querySelector(".today-focus__box");
@@ -40,8 +41,10 @@ function paintAppear(wroteUsername) {
   focusTitle.classList.add(VISIBLE_CLASSNAME);
   topBox.classList.remove(HIDDEN_CLASSNAME);
   topBox.classList.add(VISIBLE_CLASSNAME);
-  bottomBox.classList.remove(HIDDEN_CLASSNAME);
-  bottomBox.classList.add(VISIBLE_CLASSNAME);
+  todoContainer.classList.remove(HIDDEN_CLASSNAME);
+  todoContainer.classList.add(VISIBLE_CLASSNAME);
+  quoteBox.classList.remove(HIDDEN_CLASSNAME);
+  quoteBox.classList.add(VISIBLE_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

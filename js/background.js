@@ -15,5 +15,5 @@ const images = [
 const randomImage = images[Math.floor(Math.random() * images.length)];
 
 const backGroundImg = document.createElement("img");
-backGroundImg.src = `imgs/${randomImage}`;
+backGroundImg.src = `img/${randomImage}`;
 document.body.appendChild(backGroundImg);

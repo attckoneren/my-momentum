@@ -7,7 +7,7 @@
     <title>my momentum</title>
   </head>
   <body>
-    <div class="top">
+    <div class="top hidden">
       <form class="search-form">
         <button class="search-btn" type="submit" name="click" value="">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -21,8 +21,8 @@
         />
         <div class="search-border"></div>
         <select class="select-search">
-          <option class="google" value="google">Google</option>
-          <option class="naver" value="naver">Naver</option>
+          <option class="google" value="google">&#x47;</option>
+          <option class="naver" value="naver">&#x4e;</option>
         </select>
       </form>
 
@@ -34,23 +34,21 @@
     </div>
     <div class="main">
       <h2 class="clock">00:00</h2>
+
       <form class="login-form">
-        <input
-          required
-          maxlength="12"
-          type="text"
-          placeholder="What is your name?"
-        />
+        <h2>Hello, what's your name?</h2>
+        <input required maxlength="12" type="text" />
       </form>
       <h1 id="appear" class="hidden"></h1>
     </div>
 
     <div class="today-focus">
       <h3 class="hidden">Today</h3>
-      <h1 class="hidden today-focus__title">
-        What is your main focus for today?
-      </h1>
+
       <form class="today-focus__form hidden">
+        <h1 class="hidden today-focus__title">
+          What is your main focus for today?
+        </h1>
         <input type="text" required />
       </form>
       <div class="today-focus__box hidden">
@@ -61,7 +59,7 @@
       </div>
     </div>
 
-    <div class="bottom">
+    <div class="bottom hidden">
       <div class="todo-container">
         <div class="hidden todo-box">
           <ul class="todo-list"></ul>

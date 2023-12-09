@@ -44,4 +44,3 @@ const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todayQuote.quote;
 author.innerText = todayQuote.author;
-console.log(todayQuote);

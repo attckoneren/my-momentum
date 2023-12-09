@@ -1,7 +1,7 @@
 const Searching = Search.prototype;
 
 function Search() {
-  this.keyword = document.querySelector("input[name='search'");
+  this.keyword = document.querySelector("input[name='search']");
   this.engine = document.querySelector(".select-search");
   this.btn = document.querySelector(".search-btn");
   this.form = document.querySelector(".search-form");

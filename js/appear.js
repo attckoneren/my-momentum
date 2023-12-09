@@ -1,6 +1,8 @@
 const loginForm = document.querySelector(".login-form");
 const loginInput = document.querySelector(".login-form input");
 const hiddenTitle = document.querySelector("#appear");
+const topBox = document.querySelector(".top");
+const bottomBox = document.querySelector(".bottom");
 
 const focusContainer = document.querySelector(".today-focus");
 const focusBox = document.querySelector(".today-focus__box");
@@ -10,6 +12,8 @@ const focusTitle = document.querySelector(".today-focus h1");
 const focusText = document.querySelector(".today-focus h2");
 const todayTextTitle = document.querySelector(".today-focus h3");
 const focusCheckLabel = document.querySelector(".today-focus__box label");
+const focusCheckBox = document.querySelector(".today-focus__box input");
+const todayText = document.querySelector(".today-focus__text");
 const todayBtn = document.querySelector("#today-btn");
 
 const HIDDEN_CLASSNAME = "hidden";
@@ -34,6 +38,10 @@ function paintAppear(wroteUsername) {
   focusForm.classList.add(VISIBLE_CLASSNAME);
   focusTitle.classList.remove(HIDDEN_CLASSNAME);
   focusTitle.classList.add(VISIBLE_CLASSNAME);
+  topBox.classList.remove(HIDDEN_CLASSNAME);
+  topBox.classList.add(VISIBLE_CLASSNAME);
+  bottomBox.classList.remove(HIDDEN_CLASSNAME);
+  bottomBox.classList.add(VISIBLE_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -56,7 +64,9 @@ function focusEvent(focus) {
 
 function paintFocusText(wroteText) {
   focusForm.classList.add(HIDDEN_CLASSNAME);
+  focusForm.classList.remove(VISIBLE_CLASSNAME);
   focusTitle.classList.add(HIDDEN_CLASSNAME);
+  focusTitle.classList.remove(VISIBLE_CLASSNAME);
 
   todayTextTitle.classList.remove(HIDDEN_CLASSNAME);
   todayTextTitle.classList.add(VISIBLE_CLASSNAME);
@@ -77,48 +87,30 @@ function paintFocusText(wroteText) {
 
 const checkedKey = "checkBox";
 
-function clickedTodayBtn(click) {
+function clickedDeleteBtn() {
   todayTextTitle.classList.add(HIDDEN_CLASSNAME);
   todayTextTitle.classList.remove(VISIBLE_CLASSNAME);
   focusBox.classList.add(HIDDEN_CLASSNAME);
   focusBox.classList.remove(VISIBLE_CLASSNAME);
-  focusText.innerHTML = "";
+  focusText.innerText = "";
   localStorage.removeItem(FOCUS_KEY);
-
-  focusTitle.classList.remove(HIDDEN_CLASSNAME);
-  focusTitle.classList.add(VISIBLE_CLASSNAME);
   focusForm.classList.remove(HIDDEN_CLASSNAME);
   focusForm.classList.add(VISIBLE_CLASSNAME);
+  focusInput.value = "";
+  if (focusCheckBox.checked === true) {
+    focusCheckBox.value = "";
+    focusCheckBox.checked = false;
+    todayText.style.textDecoration = "none";
+  }
+  focusTitle.classList.remove(HIDDEN_CLASSNAME);
+  focusTitle.classList.add(VISIBLE_CLASSNAME);
 
   localStorage.removeItem(checkedKey);
 }
-todayBtn.addEventListener("click", clickedTodayBtn);
-
-function midnightDelete() {
-  console.log("Executing midnightDelete");
-  localStorage.removeItem(FOCUS_KEY);
-}
-
-function getCurrentTime() {
-  const now = new Date();
-  return now.getHours() * 60 + now.getMinutes();
-}
-
-function registerMidnightDelete() {
-  const midnight = 60 * 24;
-  const remainingMinutes = midnight - getCurrentTime();
-  console.log(`Registering midnightDelete in ${remainingMinutes} minutes`);
-
-  setTimeout(() => {
-    midnightDelete();
-  }, remainingMinutes * 60 * 1000);
-}
-
-focusForm.addEventListener("submit", focusEvent);
+todayBtn.addEventListener("click", clickedDeleteBtn);
 
 const savedFocus = localStorage.getItem(FOCUS_KEY);
 if (savedFocus !== null) {
   paintFocusText(savedFocus);
 }
-
-registerMidnightDelete();
+focusForm.addEventListener("submit", focusEvent);

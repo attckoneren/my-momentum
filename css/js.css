@@ -1,11 +1,12 @@
 .hidden {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden;
   position: absolute;
-  top: -9999px;
   left: -9999px;
 }
+
 .visible {
   opacity: 1;
-  transition: opacity 1.3s ease-in-out;
+  visibility: visible;
+  transition: opacity 1.5s ease-in-out;
 }

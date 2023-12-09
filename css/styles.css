@@ -171,7 +171,7 @@ h1 {
   width: 600px;
   border: none;
   border-bottom: 2px solid whitesmoke;
-  color: darkgrey;
+  color: whitesmoke;
   background-color: transparent;
   font-size: 30px;
   text-align: center;
@@ -203,7 +203,7 @@ h1 {
   transition: opacity 0.3s ease-in-out;
 }
 input#focus-check:checked + label {
-  content: url("/Users/shinseungjun/Downloads/free-icon-check-mark-5291032.png");
+  content: url("../img/check.png");
   background-color: whitesmoke;
 }
 .today-focus h3 {

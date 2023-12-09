@@ -1,4 +1,5 @@
-const API_KEY = config.apikey;
+const API_KEY = "be7edb2372ebf348c448e8ed403919bf";
+
 function onGeoAllGood(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
